@@ -9,12 +9,13 @@ import { RecipeService } from 'src/app/services/recipe.service';
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
-  recipe:Recipe|undefined;
-
+  recipe:Recipe;
+//note to check recipe type here 
+// const id=this.route.params.get('id');
   constructor(private route:ActivatedRoute,private recipeService:RecipeService){}
 
   ngOnInit(): void {
     const id=this.route.snapshot.params['id'];
-    this.recipe=this.recipeService.getRecipeById(id);
+    this.recipe=this.recipeService.getRecipeById(+id);
   }
 }

@@ -7,7 +7,6 @@ import { RecipeListComponent } from './component/recipe-list/recipe-list.compone
 import { RecipeDetailComponent } from './component/recipe-detail/recipe-detail.component';
 import { RecipeFormComponent } from './component/recipe-form/recipe-form.component';
 import { FormsModule } from '@angular/forms';
-import { RouterModule} from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({

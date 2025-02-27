@@ -1,10 +1,29 @@
-<h2>Add Recipe</h2>
-<form (submit)="addRecipe()">
-  <label>Name : <input type="text" [(ngModel)]="name" /></label>
+<!-- <h2>Add Recipe</h2> -->
+<h2>{{ isEditMode ? "EDIT" : "ADD" }} Recipe</h2>
+<form (submit)="saveRecipe()">
+  <label
+    >Name : <input type="text" [(ngModel)]="recipe.name" name="name" required
+  /></label>
   <br />
-  <label>Cuisine : <input type="text" [(ngModel)]="cuisine" /></label>
+  <label
+    >Cuisine :
+    <input type="text" [(ngModel)]="recipe.cuisine" name="cuisine" required
+  /></label>
   <br />
-  <label>Description : <input type="text" [(ngModel)]="description" /></label>
+  <label
+    >Description :
+    <textarea
+      type="text"
+      [(ngModel)]="recipe.description"
+      name="description"
+      required
+      id="description"
+      cols="32"
+      rows="6"
+    ></textarea>
+  </label>
   <br />
-  <button type="submit">Add recipes</button>
+  <button type="submit" class="btn btn-primary">
+    {{ isEditMode ? "UPDATE" : "ADD" }} Recipes
+  </button>
 </form>
